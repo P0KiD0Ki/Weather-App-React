@@ -25,13 +25,13 @@ export default function Container() {
           <h6 id="weather">Sunny</h6>
           <h2 className="currentTemp">
             <span id="current-temp">55</span>
-            <a href="#" id="f-link" className="active">
+            <span href="#" id="f-link" className="active">
               °F
-            </a>
+            </span>
             <span className="line">|</span>
-            <a href="#" id="c-link">
+            <span href="#" id="c-link">
               °C
-            </a>
+            </span>
           </h2>
           <i className="" id="main-icon"></i>
           <br />
