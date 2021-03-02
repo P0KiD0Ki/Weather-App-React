@@ -1,0 +1,203 @@
+body {
+  background: url(https://i.gifer.com/g2Bn.gif) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+.container {
+  border: 4px inset black;
+  border-radius: 10px;
+}
+
+div.Forecast {
+  /* position: relative;
+  bottom: 950px;
+  left: 200px; */
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+.row {
+  width: 248px;
+  line-height: 33px;
+  margin: 10px 0px;
+  padding: 10px 0px;
+}
+
+.textbox {
+  width: 205px;
+  font-size: 17px;
+}
+
+.dayOfWeek {
+  /* position: relative;
+  top: 2px; */
+  font-size: 25px;
+  padding: 0px 10px;
+  color: #fff;
+  text-shadow: 0.5px 0.5px #000;
+}
+
+.temp {
+  font-size: 20px;
+  text-align: right;
+  padding: 0px 10px;
+  color: #fff;
+  text-shadow: 0.5px 0.5px #000;
+}
+
+#main-icon {
+  padding: 12px 0px 0px 0px;
+  margin: 0px;
+  font-size: 115px;
+  width: 270px;
+  text-align: center;
+  color: #000;
+  text-shadow: 2px 2px #fff;
+}
+
+.col-4 {
+  width: 248px;
+}
+
+.InnerContainer {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px dashed black;
+  padding: 10px;
+  width: 290px;
+  /* position: relative;
+  top: -480px;
+  left: 440px; */
+  height: 465px;
+  font-family: "Open Sans Condensed", sans-serif;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 56.5px;
+  line-height: 60px;
+  margin: 0 auto;
+  font-weight: bold;
+  padding: 0px, 5px;
+  text-transform: capitalize;
+  color: #fff;
+  text-shadow: 2px 2px #000;
+}
+
+.dateTime {
+  font-size: 20px;
+  margin: 0;
+  text-align: right;
+  color: #000;
+  text-shadow: 1px 1px #fff;
+}
+
+.wind,
+.humidity {
+  /* position: relative;
+  bottom: 50px; */
+  margin: 0px;
+  font-size: 20px;
+  color: #fff;
+  text-shadow: 0.5px 0.5px #000;
+}
+
+.fas {
+  padding: 0px;
+  font-size: 20px;
+  width: 50px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0.5px 0.5px #000;
+}
+
+.currentTemp {
+  font-size: 85px;
+  text-align: right;
+  line-height: 60px;
+  width: 270px;
+  padding: 10px 0px 0px 0px;
+  font-weight: bold;
+  margin: 0px;
+}
+
+#current-temp {
+  color: #000;
+  text-shadow: 2px 2px #fff;
+}
+
+h1.city {
+  position: relative;
+  right: 27px;
+  padding: 10px 0px 2px 0px;
+  text-align: right;
+  width: 300px;
+  color: #000;
+  text-shadow: 1px 1px #fff;
+}
+
+#f-link,
+#c-link,
+.line {
+  text-align: right;
+  font-size: 20px;
+  position: relative;
+  top: -50px;
+  text-decoration: none;
+}
+
+#weather {
+  text-align: right;
+  padding: 8px 0px 0px 0px;
+  margin: 0px;
+}
+
+.foot {
+  font-family: "Courier New", Courier, monospace;
+  display: block;
+  font-size: 20px;
+  text-align: center;
+  margin: 0 auto;
+  text-decoration: none;
+  /* position: relative;
+  bottom: 910px; */
+}
+
+#button-loc {
+  background: #92d48e;
+  border-radius: 5px;
+}
+
+#button {
+  border-radius: 5px;
+}
+
+a#f-link.active {
+  color: black;
+  cursor: default;
+}
+
+a#c-link.active {
+  color: black;
+  cursor: default;
+}
+
+#f-link .active:hover {
+  text-decoration: none;
+}
+
+#sun-icon,
+#mon-icon,
+#tues-icon,
+#wed-icon,
+#thurs-icon,
+#fri-icon,
+#sat-icon {
+  width: 40px;
+}
+
+div.row {
+  margin: 6px;
+}
