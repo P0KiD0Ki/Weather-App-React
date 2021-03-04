@@ -8,7 +8,7 @@ body {
   margin: 0 auto;
 }
 
-div.container {
+div.primary-container {
   border: 4px dashed #5a454b;
   border-radius: 10px;
   max-width: 675px;
@@ -17,19 +17,6 @@ div.container {
   font-family: "Open Sans Condensed", sans-serif;
   padding: 0px 20px 0px 0px;
 }
-
-div.container-forecast {
-  display: inline-block;
-  align-items: left;
-  max-width: 248px;
-  margin: 0px auto 15px auto;
-}
-
-
-div.Forecast {
-  font-family: "Open Sans Condensed", sans-serif;
-}
-
 
 input.textbox {
   width: 205px;
@@ -56,13 +43,13 @@ input.textbox {
   text-shadow: 0.5px 0.5px #000;
 }
 
-#main-icon {
-  padding: 12px 0px 0px 0px;
-  margin: 0px;
-  font-size: 115px;
-  text-align: center;
-  color: #5a454b;
-  text-shadow: 2px 2px #fff;
+div.strong-side.col {
+  max-width: 248px;
+}
+
+.main-icon {
+  max-width: 15px;
+  margin: 0 auto;
 }
 
 h1 {
@@ -77,22 +64,11 @@ h1 {
 }
 
 .dateTime,
-span.wind,
-span.humidity {
+span.wind-humidity {
   font-size: 20px;
   margin: 10px 0px;
   text-align: right;
   color: #5a454b;
-  text-shadow: 0.5px 0.5px #000;
-}
-
-
-.fas {
-  padding: 0px;
-  font-size: 20px;
-  width: 50px;
-  text-align: center;
-  color: #fff;
   text-shadow: 0.5px 0.5px #000;
 }
 
