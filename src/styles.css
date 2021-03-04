@@ -1,5 +1,6 @@
 body {
-  background: url(https://i.gifer.com/g2Bn.gif) no-repeat center center fixed;
+  background: url(https://media4.giphy.com/media/26gs7byN2JOXsBiuY/source.gif)
+    no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -7,33 +8,40 @@ body {
   margin: 0 auto;
 }
 
-.container {
-  border: 4px inset black;
+div.container {
+  border: 4px dashed #5a454b;
   border-radius: 10px;
+  max-width: 675px;
+  margin: 70px auto 0px;
+  background: rgba(255, 255, 255, 0.8);
+  font-family: "Open Sans Condensed", sans-serif;
+  padding: 0px 20px 0px 0px;
 }
 
+div.container-forecast {
+  display: inline-block;
+  align-items: left;
+  max-width: 248px;
+  margin: 0px auto 15px auto;
+}
+
+
 div.Forecast {
-  /* position: relative;
-  bottom: 950px;
-  left: 200px; */
   font-family: "Open Sans Condensed", sans-serif;
 }
 
-.row {
-  width: 248px;
-  line-height: 33px;
-  margin: 10px 0px;
-  padding: 10px 0px;
-}
 
-.textbox {
+input.textbox {
   width: 205px;
   font-size: 17px;
+  height: 35px;
+  padding: 5px 10px;
+  margin: 15px 0px 0px 20px;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 .dayOfWeek {
-  /* position: relative;
-  top: 2px; */
   font-size: 25px;
   padding: 0px 10px;
   color: #fff;
@@ -52,27 +60,9 @@ div.Forecast {
   padding: 12px 0px 0px 0px;
   margin: 0px;
   font-size: 115px;
-  width: 270px;
   text-align: center;
-  color: #000;
+  color: #5a454b;
   text-shadow: 2px 2px #fff;
-}
-
-.col-4 {
-  width: 248px;
-}
-
-.InnerContainer {
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px dashed black;
-  padding: 10px;
-  width: 290px;
-  /* position: relative;
-  top: -480px;
-  left: 440px; */
-  height: 465px;
-  font-family: "Open Sans Condensed", sans-serif;
-  border-radius: 10px;
 }
 
 h1 {
@@ -82,27 +72,20 @@ h1 {
   font-weight: bold;
   padding: 0px, 5px;
   text-transform: capitalize;
-  color: #fff;
+  color: #5a454b;
   text-shadow: 2px 2px #000;
 }
 
-.dateTime {
+.dateTime,
+span.wind,
+span.humidity {
   font-size: 20px;
-  margin: 0;
+  margin: 10px 0px;
   text-align: right;
-  color: #000;
-  text-shadow: 1px 1px #fff;
-}
-
-.wind,
-.humidity {
-  /* position: relative;
-  bottom: 50px; */
-  margin: 0px;
-  font-size: 20px;
-  color: #fff;
+  color: #5a454b;
   text-shadow: 0.5px 0.5px #000;
 }
+
 
 .fas {
   padding: 0px;
@@ -117,25 +100,21 @@ h1 {
   font-size: 85px;
   text-align: right;
   line-height: 60px;
-  width: 270px;
   padding: 10px 0px 0px 0px;
   font-weight: bold;
   margin: 0px;
 }
 
 #current-temp {
-  color: #000;
-  text-shadow: 2px 2px #fff;
+  color: #5a454b;
+  text-shadow: 2px 2px #000;
 }
 
 h1.city {
-  position: relative;
-  right: 27px;
   padding: 10px 0px 2px 0px;
   text-align: right;
-  width: 300px;
-  color: #000;
-  text-shadow: 1px 1px #fff;
+  color: #5a454b;
+  text-shadow: 1px 1px #000;
 }
 
 #f-link,
@@ -161,17 +140,21 @@ h1.city {
   text-align: center;
   margin: 0 auto;
   text-decoration: none;
-  /* position: relative;
-  bottom: 910px; */
 }
 
 #button-loc {
   background: #92d48e;
+  height: 35px;
+  border: 1px solid black;
   border-radius: 5px;
 }
 
 #button {
   border-radius: 5px;
+  border: 1px solid black;
+  height: 35px;
+  margin: 0px 3px;
+  font-weight: bold;
 }
 
 a#f-link.active {
@@ -196,8 +179,4 @@ a#c-link.active {
 #fri-icon,
 #sat-icon {
   width: 40px;
-}
-
-div.row {
-  margin: 6px;
 }

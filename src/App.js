@@ -1,14 +1,12 @@
 import React from "react";
 import "./styles.css";
-import Container from "./Container";
-import Forecast from "./Forecast";
+import MainContainer from "./MainContainer";
 import GithubLink from "./GithubLink";
 
 export default function App() {
   return (
     <div className="App">
-      <Container />
-      <Forecast />
+      <MainContainer />
       <GithubLink />
     </div>
   );
