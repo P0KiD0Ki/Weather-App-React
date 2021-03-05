@@ -48,6 +48,7 @@ div.main-icon.col {
   padding: 0px;
   margin: 0 auto;
   max-width: 75px;
+  background: rgba(231, 182, 195, 0.4)
 }
 
 
@@ -151,7 +152,7 @@ h1.city {
 }
 
 #button-loc {
-  background: #92d48e;
+  background: rgba(143, 195, 86, .7);
   height: 35px;
   border: 1px solid black;
   border-radius: 5px;
