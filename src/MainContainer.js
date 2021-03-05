@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import Card from "react-bootstrap/Card";
 
 export default function MainContainer() {
   return (
@@ -88,7 +87,10 @@ export default function MainContainer() {
             </Col>
             {/* main icon column */}
             <Col className="main-icon">
-              <img src="https://freepngimg.com/thumb/categories/2275.png" />
+              <img
+                src="https://freepngimg.com/thumb/categories/2275.png"
+                alt="weather"
+              />
             </Col>
           </Row>
         </Col>
