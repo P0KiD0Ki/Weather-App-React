@@ -97,7 +97,7 @@ h1 {
 span.wind-humidity {
   font-size: 20px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 10px 5px 10px 0px;
   text-align: right;
   color: #5a454b;
   text-shadow: 0.5px 0.5px #000;
