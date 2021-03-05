@@ -90,7 +90,7 @@ export default function MainContainer() {
             </Col>
             {/* main icon column */}
             <Col className="main-icon">
-              <Icons icon="CLEAR_DAY" color="#EBCE00" size="250px" />
+              <Icons icon="CLEAR_DAY" color="#EBCE00" size="225px" />
             </Col>
           </Row>
         </Col>

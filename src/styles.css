@@ -48,9 +48,8 @@ div.main-icon.col {
   padding: 0px;
   margin: 0 auto;
   max-width: 75px;
-  background: rgba(231, 182, 195, 0.4)
+  background: rgba(231, 182, 195, 0.4);
 }
-
 
 input.textbox {
   width: 205px;
@@ -77,6 +76,9 @@ input.textbox {
   text-shadow: 0.5px 0.5px #000;
 }
 
+canvas {
+  padding: 20px 0px 0px 20px;
+}
 
 .main-icon {
   max-width: 20px;
@@ -152,7 +154,7 @@ h1.city {
 }
 
 #button-loc {
-  background: rgba(143, 195, 86, .7);
+  background: rgba(143, 195, 86, 0.7);
   height: 35px;
   border: 1px solid black;
   border-radius: 5px;
