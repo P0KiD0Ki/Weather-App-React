@@ -74,7 +74,6 @@ export default function MainContainer() {
                 </Row>
                 <br />
                 <Row>
-                  <Col xs={4} className="day-box-null"></Col>
                   <Col xs={4} className="day-box">
                     <strong className="day">Sat</strong>
                     <br />
