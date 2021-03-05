@@ -11,11 +11,49 @@ body {
 div.primary-container {
   border: 4px dashed #5a454b;
   border-radius: 10px;
-  max-width: 675px;
+  max-width: 625px;
+  min-width: 525px;
   margin: 70px auto 0px;
   background: rgba(255, 255, 255, 0.8);
   font-family: "Open Sans Condensed", sans-serif;
   padding: 0px 20px 0px 0px;
+}
+
+div.forecast.container {
+  margin: 20px 0px 0px 60px;
+  text-align: center;
+  padding: 0px;
+  max-width: 375px;
+}
+
+.day {
+  text-decoration: underline;
+  color: #5a454b;
+}
+
+div.col {
+  padding: 0px;
+}
+
+div.day-box-row.row {
+  max-width: 300px;
+}
+
+div.main-icon.col {
+  padding: 0px;
+}
+
+.day-box {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 0px;
+  margin: 0 10px;
+  max-width: 75px;
+}
+.day-box-null {
+  padding: 0px;
+  margin: 0 10px;
+  max-width: 75px;
 }
 
 input.textbox {

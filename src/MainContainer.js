@@ -6,7 +6,7 @@ export default function MainContainer() {
   return (
     <Container fluid className="primary-container">
       <Row>
-        <Col sm="auto">
+        <Col xs="auto">
           <form className="inputBox" id="search-form">
             <input
               type="search"
@@ -20,23 +20,69 @@ export default function MainContainer() {
           </form>
         </Col>
       </Row>
+      {/* forecast grid */}
       <Row>
         <Col>
           <Row>
             <Col>
-              <Container>
-                <Row xs={4}>
-                  <Col>Sun</Col>
-                  <Col xs={4}>Mon</Col>
-                  <Col xs={4}>Tues</Col>
+              <Container className="forecast">
+                <Row>
+                  <Col xs={4} className="day-box">
+                    <strong className="day">Sun</strong>
+                    <br />
+                    55° / 55°
+                    <br />
+                    icon
+                  </Col>
+                  <Col xs={4} className="day-box">
+                    <strong className="day">Mon</strong>
+                    <br />
+                    55° / 55°
+                    <br />
+                    icon
+                  </Col>
+                  <Col xs={4} className="day-box">
+                    <strong className="day">Tues</strong>
+                    <br />
+                    55° / 55°
+                    <br />
+                    icon
+                  </Col>
                 </Row>
-                <Row xs={4}>
-                  <Col>Wed</Col>
-                  <Col xs={4}>Thurs</Col>
-                  <Col xs={4}>Fri</Col>
+                <br />
+                <Row>
+                  <Col xs={4} className="day-box">
+                    <strong className="day">Wed</strong>
+                    <br />
+                    55° / 55°
+                    <br />
+                    icon
+                  </Col>
+                  <Col xs={4} className="day-box">
+                    <strong className="day">Thurs</strong>
+                    <br />
+                    55° / 55°
+                    <br />
+                    icon
+                  </Col>
+                  <Col xs={4} className="day-box">
+                    <strong className="day">Fri</strong>
+                    <br />
+                    55° / 55°
+                    <br />
+                    icon
+                  </Col>
                 </Row>
-                <Row xs={4}>
-                  <Col>Sat</Col>
+                <br />
+                <Row>
+                  <Col xs={4} className="day-box-null"></Col>
+                  <Col xs={4} className="day-box">
+                    <strong className="day">Sat</strong>
+                    <br />
+                    55° / 55°
+                    <br />
+                    icon
+                  </Col>
                 </Row>
               </Container>
             </Col>
