@@ -19,10 +19,10 @@ div.primary-container {
 }
 
 div.forecast.container {
-  margin: 20px auto;
+  margin: 0 auto;
   text-align: center;
-  padding: 0px;
   max-width: 375px;
+  padding: 10px 0px 0px 45px;
 }
 
 .day {
@@ -76,10 +76,6 @@ input.textbox {
   text-shadow: 0.5px 0.5px #000;
 }
 
-div.strong-side.col {
-  max-width: 250px;
-  margin: 0px 20px 0px 0px;
-}
 
 .main-icon {
   max-width: 50px;
@@ -100,7 +96,8 @@ h1 {
 .dateTime,
 span.wind-humidity {
   font-size: 20px;
-  margin: 10px 0px;
+  margin: 0 auto;
+  padding: 10px;
   text-align: right;
   color: #5a454b;
   text-shadow: 0.5px 0.5px #000;
