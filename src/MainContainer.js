@@ -15,7 +15,9 @@ export default function MainContainer() {
               autoFocus
             />
             <input type="submit" id="button" value="GO" />
-            <input type="submit" id="button-loc" value="Current Location" />
+            <button id="button-loc">
+              <i class="fas fa-crosshairs"></i>
+            </button>
           </form>
         </Col>
       </Row>
