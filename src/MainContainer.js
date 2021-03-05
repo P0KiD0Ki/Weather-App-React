@@ -1,5 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import Icons from "./Icons"
+
 
 export default function MainContainer() {
   return (
@@ -88,10 +90,7 @@ export default function MainContainer() {
             </Col>
             {/* main icon column */}
             <Col className="main-icon">
-              <img
-                src="https://freepngimg.com/thumb/categories/2275.png"
-                alt="weather"
-              />
+              <Icons icon="CLEAR_DAY" color="#EBCE00" size="250px" />
             </Col>
           </Row>
         </Col>
