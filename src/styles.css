@@ -147,6 +147,7 @@ h1.city {
   text-align: center;
   margin: 0 auto;
   text-decoration: none;
+  font-weight: bold;
 }
 
 #button-loc {
