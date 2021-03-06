@@ -49,6 +49,7 @@ div.main-icon.col {
   margin: 0 auto;
   max-width: 75px;
   background: rgba(231, 182, 195, 0.4);
+  font-family: 'Montserrat', sans-serif;
 }
 
 input.textbox {
@@ -86,14 +87,15 @@ canvas {
 }
 
 h1 {
-  font-size: 56.5px;
+  font-size: 55px;
   line-height: 60px;
   margin: 0 auto;
-  font-weight: bold;
+  font-weight: normal;
   padding: 0px, 5px;
   text-transform: capitalize;
   color: #5a454b;
   text-shadow: 2px 2px #000;
+  font-family: 'Shrikhand', cursive;
 }
 
 .dateTime,
@@ -104,6 +106,7 @@ span.wind-humidity {
   text-align: right;
   color: #5a454b;
   text-shadow: 0.5px 0.5px #000;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .currentTemp {
@@ -111,8 +114,9 @@ span.wind-humidity {
   text-align: right;
   line-height: 60px;
   padding: 10px 0px 0px 0px;
-  font-weight: bold;
+  font-weight: normal;
   margin: 0px;
+  font-family: 'Shrikhand', cursive;
 }
 
 #current-temp {
