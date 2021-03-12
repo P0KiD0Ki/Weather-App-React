@@ -42,58 +42,65 @@ export default function Forecast() {
     return (
       <Container className="forecast">
         <Row>
+          {/* sunday */}
           <Col xs={4} className="day-box">
             <strong className="day">Sun</strong>
             <br />
-            {forecast.sunHi}° / {forecast.sunLo}°
+            {forecast.sunHi}° | {forecast.sunLo}°
             <br />
             icon
           </Col>
+          {/* monday */}
           <Col xs={4} className="day-box">
             <strong className="day">Mon</strong>
             <br />
-            {forecast.monHi}° / {forecast.monLo}°
+            {forecast.monHi}° | {forecast.monLo}°
             <br />
             icon
           </Col>
+          {/* tuesday */}
           <Col xs={4} className="day-box">
             <strong className="day">Tues</strong>
             <br />
-            {forecast.tueHi}° / {forecast.tueLo}°
+            {forecast.tueHi}° | {forecast.tueLo}°
             <br />
             icon
           </Col>
         </Row>
         <br />
         <Row>
+          {/* wednesday */}
           <Col xs={4} className="day-box">
             <strong className="day">Wed</strong>
             <br />
-            {forecast.wedHi}° / {forecast.wedLo}°
+            {forecast.wedHi}° | {forecast.wedLo}°
             <br />
             icon
           </Col>
+          {/* thursday */}
           <Col xs={4} className="day-box">
             <strong className="day">Thurs</strong>
             <br />
-            {forecast.thurHi}° / {forecast.thurLo}°
+            {forecast.thurHi}° | {forecast.thurLo}°
             <br />
             icon
           </Col>
+          {/* friday */}
           <Col xs={4} className="day-box">
             <strong className="day">Fri</strong>
             <br />
-            {forecast.friHi}° / {forecast.friLo}°
+            {forecast.friHi}° | {forecast.friLo}°
             <br />
             icon
           </Col>
         </Row>
         <br />
         <Row>
+          {/* saturday */}
           <Col xs={4} className="day-box">
             <strong className="day">Sat</strong>
             <br />
-            {forecast.satHi}° / {forecast.satLo}°
+            {forecast.satHi}° | {forecast.satLo}°
             <br />
             icon
           </Col>
