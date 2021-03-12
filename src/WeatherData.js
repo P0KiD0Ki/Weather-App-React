@@ -6,7 +6,11 @@ import Loader from "react-loader-spinner";
 
 export default function WeatherData() {
   const [ready, setReady] = useState(false);
+  
   const [temperature, setTemperature] = useState(null);
+  const [wind, setWind] = useState(null);
+  const [humidity, setHumidity] = useState(null);
+
 
   // error function
 
@@ -18,6 +22,9 @@ export default function WeatherData() {
 
   function displayTemp(response) {
     setTemperature(Math.round(response.data.main.temp));
+    setWind(Math.round(response.data.wind.speed));
+    setHumidity(Math.round(response.data.main.humidity));
+
     setReady(true);
   }
 
@@ -41,8 +48,8 @@ export default function WeatherData() {
             </span>
           </h2>
           <span className="wind-humidity">
-            Wind: 5 mph <br />
-            Humidity: 5%
+            Wind: {wind} mph <br />
+            Humidity: {humidity}%
           </span>
         </h6>
       </Col>
