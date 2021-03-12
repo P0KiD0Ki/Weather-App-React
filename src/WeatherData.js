@@ -7,11 +7,7 @@ import Loader from "react-loader-spinner";
 export default function WeatherData() {
   const [ready, setReady] = useState(false);
 
-  const [temperature, setTemperature] = useState(null);
-  const [wind, setWind] = useState(null);
-  const [humidity, setHumidity] = useState(null);
-  const [description, setDescription] = useState(null);
-
+  const [weather, setWeather] = useState({});
 
   // error function
 
@@ -22,10 +18,12 @@ export default function WeatherData() {
   }
 
   function displayTemp(response) {
-    setTemperature(Math.round(response.data.main.temp));
-    setWind(Math.round(response.data.wind.speed));
-    setHumidity(Math.round(response.data.main.humidity));
-    setDescription(response.data.weather[0].main);
+    setWeather({
+      temperature: Math.round(response.data.main.temp),
+      wind: Math.round(response.data.wind.speed),
+      humidity: Math.round(response.data.main.humidity),
+      description: response.data.weather[0].main,
+    });
 
     setReady(true);
   }
@@ -38,9 +36,9 @@ export default function WeatherData() {
           <br />
           <span className="time">13:00</span> <br />
           <h1 className="city">Atlanta</h1>
-          <h6 id="weather">{description}</h6>
+          <h6 id="weather">{weather.description}</h6>
           <h2 className="currentTemp">
-            <span id="current-temp">{temperature}</span>
+            <span id="current-temp">{weather.temperature}</span>
             <span href="#" id="f-link" className="active">
               °F
             </span>
@@ -50,8 +48,8 @@ export default function WeatherData() {
             </span>
           </h2>
           <span className="wind-humidity">
-            Wind: {wind} mph <br />
-            Humidity: {humidity}%
+            Wind: {weather.wind} mph <br />
+            Humidity: {weather.humidity}%
           </span>
         </h6>
       </Col>
@@ -65,10 +63,10 @@ export default function WeatherData() {
 
     return (
       <Loader
-        type="Puff"
-        color="#00BFFF"
-        height={100}
-        width={100}
+        type="Hearts"
+        color="#5a454b"
+        height={50}
+        width={50}
         timeout={3000} //3 sec
       />
     );

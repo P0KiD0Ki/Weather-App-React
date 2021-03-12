@@ -7,56 +7,33 @@ import Loader from "react-loader-spinner";
 export default function Forecast() {
   const [ready, setReady] = useState(false);
 
-  // sunday
-  const [sunHiTemp, setSunHiTemp] = useState(null);
-  const [sunLoTemp, setSunLoTemp] = useState(null);
-  // monday
-  const [monHiTemp, setMonHiTemp] = useState(null);
-  const [monLoTemp, setMonLoTemp] = useState(null);
-  //tuesday
-  const [tueHiTemp, setTueHiTemp] = useState(null);
-  const [tuesLoTemp, setTuesLoTemp] = useState(null);
-  //wednesday
-  const [wedHiTemp, setWedHiTemp] = useState(null);
-  const [wedLoTemp, setwedLoTemp] = useState(null);
-  //thursday
-  const [thurHiTemp, setThurHiTemp] = useState(null);
-  const [thurLoTemp, setThurLoTemp] = useState(null);
-  //friday
-  const [friHiTemp, setFriHiTemp] = useState(null);
-  const [friLoTemp, setFriLoTemp] = useState(null);
-  //saturday
-  const [satHiTemp, setSatHiTemp] = useState(null);
-  const [satLoTemp, setSatLoTemp] = useState(null);
+  const [forecast, setForecast] = useState({});
 
   function displayForecast(response) {
     //sunday
-    setSunHiTemp(Math.round(response.data.data[0].app_max_temp));
-    setSunLoTemp(Math.round(response.data.data[0].app_min_temp));
-
-    //monday
-    setMonHiTemp(Math.round(response.data.data[1].app_max_temp));
-    setMonLoTemp(Math.round(response.data.data[1].app_min_temp));
-
-    //tuesday
-    setTueHiTemp(Math.round(response.data.data[2].app_max_temp));
-    setTuesLoTemp(Math.round(response.data.data[2].app_min_temp));
-
-    //wednesday
-    setWedHiTemp(Math.round(response.data.data[3].app_max_temp));
-    setwedLoTemp(Math.round(response.data.data[3].app_min_temp));
-
-    //thursday
-    setThurHiTemp(Math.round(response.data.data[4].app_max_temp));
-    setThurLoTemp(Math.round(response.data.data[4].app_min_temp));
-
-    //friday
-    setFriHiTemp(Math.round(response.data.data[5].app_max_temp));
-    setFriLoTemp(Math.round(response.data.data[5].app_min_temp));
-
-    //saturday
-    setSatHiTemp(Math.round(response.data.data[6].app_max_temp));
-    setSatLoTemp(Math.round(response.data.data[6].app_min_temp));
+    setForecast({
+      //sunday
+      sunHi: Math.round(response.data.data[0].app_max_temp),
+      sunLo: Math.round(response.data.data[0].app_min_temp),
+      //monday
+      monHi: Math.round(response.data.data[1].app_max_temp),
+      monLo: Math.round(response.data.data[1].app_min_temp),
+      //tuesday
+      tueHi: Math.round(response.data.data[2].app_max_temp),
+      tueLo: Math.round(response.data.data[2].app_min_temp),
+      //wednesday
+      wedHi: Math.round(response.data.data[3].app_max_temp),
+      wedLo: Math.round(response.data.data[3].app_min_temp),
+      //thursday
+      thurHi: Math.round(response.data.data[4].app_max_temp),
+      thurLo: Math.round(response.data.data[4].app_min_temp),
+      //friday
+      friHi: Math.round(response.data.data[5].app_max_temp),
+      friLo: Math.round(response.data.data[5].app_min_temp),
+      //saturday
+      satHi: Math.round(response.data.data[6].app_max_temp),
+      satLo: Math.round(response.data.data[6].app_min_temp),
+    });
 
     setReady(true);
   }
@@ -68,21 +45,21 @@ export default function Forecast() {
           <Col xs={4} className="day-box">
             <strong className="day">Sun</strong>
             <br />
-            {sunHiTemp}° / {sunLoTemp}°
+            {forecast.sunHi}° / {forecast.sunLo}°
             <br />
             icon
           </Col>
           <Col xs={4} className="day-box">
             <strong className="day">Mon</strong>
             <br />
-            {monHiTemp}° / {monLoTemp}°
+            {forecast.monHi}° / {forecast.monLo}°
             <br />
             icon
           </Col>
           <Col xs={4} className="day-box">
             <strong className="day">Tues</strong>
             <br />
-            {tueHiTemp}° / {tuesLoTemp}°
+            {forecast.tueHi}° / {forecast.tueLo}°
             <br />
             icon
           </Col>
@@ -92,21 +69,21 @@ export default function Forecast() {
           <Col xs={4} className="day-box">
             <strong className="day">Wed</strong>
             <br />
-            {wedHiTemp}° / {wedLoTemp}°
+            {forecast.wedHi}° / {forecast.wedLo}°
             <br />
             icon
           </Col>
           <Col xs={4} className="day-box">
             <strong className="day">Thurs</strong>
             <br />
-            {thurHiTemp}° / {thurLoTemp}°
+            {forecast.thurHi}° / {forecast.thurLo}°
             <br />
             icon
           </Col>
           <Col xs={4} className="day-box">
             <strong className="day">Fri</strong>
             <br />
-            {friHiTemp}° / {friLoTemp}°
+            {forecast.friHi}° / {forecast.friLo}°
             <br />
             icon
           </Col>
@@ -116,7 +93,7 @@ export default function Forecast() {
           <Col xs={4} className="day-box">
             <strong className="day">Sat</strong>
             <br />
-            {satHiTemp}° / {satLoTemp}°
+            {forecast.satHi}° / {forecast.satLo}°
             <br />
             icon
           </Col>
@@ -132,11 +109,11 @@ export default function Forecast() {
 
     return (
       <Loader
-        type="Puff"
-        color="#00BFFF"
-        height={100}
-        width={100}
-        timeout={1000} //1 sec
+        type="Hearts"
+        color="#5a454b"
+        height={50}
+        width={50}
+        timeout={3000} //3 sec
       />
     );
   }
