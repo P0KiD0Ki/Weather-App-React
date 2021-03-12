@@ -6,10 +6,11 @@ import Loader from "react-loader-spinner";
 
 export default function WeatherData() {
   const [ready, setReady] = useState(false);
-  
+
   const [temperature, setTemperature] = useState(null);
   const [wind, setWind] = useState(null);
   const [humidity, setHumidity] = useState(null);
+  const [description, setDescription] = useState(null);
 
 
   // error function
@@ -24,6 +25,7 @@ export default function WeatherData() {
     setTemperature(Math.round(response.data.main.temp));
     setWind(Math.round(response.data.wind.speed));
     setHumidity(Math.round(response.data.main.humidity));
+    setDescription(response.data.weather[0].main);
 
     setReady(true);
   }
@@ -36,7 +38,7 @@ export default function WeatherData() {
           <br />
           <span className="time">13:00</span> <br />
           <h1 className="city">Atlanta</h1>
-          <h6 id="weather">Sunny</h6>
+          <h6 id="weather">{description}</h6>
           <h2 className="currentTemp">
             <span id="current-temp">{temperature}</span>
             <span href="#" id="f-link" className="active">
@@ -67,7 +69,7 @@ export default function WeatherData() {
         color="#00BFFF"
         height={100}
         width={100}
-        timeout={1000} //1 sec
+        timeout={3000} //3 sec
       />
     );
   }
