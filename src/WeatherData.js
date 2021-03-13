@@ -4,10 +4,8 @@ import axios from "axios";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 
-export default function WeatherData() {
-  const [ready, setReady] = useState(false);
-
-  const [weather, setWeather] = useState({});
+export default function WeatherData(props) {
+  const [weather, setWeather] = useState({ ready: false });
 
   // error function
 
@@ -19,23 +17,23 @@ export default function WeatherData() {
 
   function displayTemp(response) {
     setWeather({
+      ready: true,
       temperature: Math.round(response.data.main.temp),
       wind: Math.round(response.data.wind.speed),
       humidity: Math.round(response.data.main.humidity),
       description: response.data.weather[0].main,
+      city: response.data.name,
     });
-
-    setReady(true);
   }
 
-  if (ready) {
+  if (weather.ready) {
     return (
       <Col className="strong-side">
         <h6 className="dateTime">
           <span className="fullDate">Dec 26, 2020</span>
           <br />
           <span className="time">13:00</span> <br />
-          <h1 className="city">Atlanta</h1>
+          <h1 className="city">{weather.city}</h1>
           <h6 id="weather">{weather.description}</h6>
           <h2 className="currentTemp">
             <span id="current-temp">{weather.temperature}</span>
@@ -55,18 +53,19 @@ export default function WeatherData() {
       </Col>
     );
   } else {
-    const apiKey = "7cae0a9d7005e1c52f2d634f98d69293";
-    let city = `Atlanta`;
+    const apiKey = "16fb7fe8628dfdd6476ce112c8b8470c";
+    let city = "Atlanta"
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
 
     axios.get(apiUrl).then(displayTemp).catch(errorFunction);
 
     return (
       <Loader
+      className="loader"
         type="Hearts"
         color="#5a454b"
-        height={50}
-        width={50}
+        height={200}
+        width={200}
         timeout={3000} //3 sec
       />
     );

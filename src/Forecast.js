@@ -33,6 +33,9 @@ export default function Forecast() {
       //saturday
       satHi: Math.round(response.data.data[6].app_max_temp),
       satLo: Math.round(response.data.data[6].app_min_temp),
+
+      //icon
+      
     });
 
     setReady(true);
@@ -109,17 +112,18 @@ export default function Forecast() {
     );
   } else {
     const forecastKey = "13ce2da2cd2d4da6b6a30677bd0ecc0d";
-    let city = `Atlanta`;
+    let city = "Atlanta"
     const forecastUrl = `https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=${forecastKey}&units=I`;
 
     axios.get(forecastUrl).then(displayForecast);
 
     return (
       <Loader
+      className="loader"
         type="Hearts"
         color="#5a454b"
-        height={50}
-        width={50}
+        height={200}
+        width={200}
         timeout={3000} //3 sec
       />
     );

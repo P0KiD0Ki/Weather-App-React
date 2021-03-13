@@ -195,3 +195,8 @@ a#c-link.active {
 #sat-icon {
   width: 40px;
 }
+
+.loader {
+margin: 0 auto;
+padding: 0px 80px;
+}
