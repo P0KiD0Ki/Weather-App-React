@@ -32,14 +32,15 @@ export default function WeatherData(props) {
     return (
       <div>
         <Row>
-           {/* forecast grid */}
+           {/* forecast data */}
          <Col>
            <Forecast />
          </Col>
-         {/* main icon column */}
+         {/* main icon */}
          <Col className="main-icon">
            <Icons icon="CLEAR_DAY" color="#EBCE00" size="225px" />
          </Col>
+         {/* primary weather data */}
       <Col className="strong-side">
         <h6 className="dateTime">
           <span className="fullDate">Dec 26, 2020</span>
