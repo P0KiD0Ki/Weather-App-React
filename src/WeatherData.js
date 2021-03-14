@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { Col } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import axios from "axios";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
+import Icons from "./Icons"
+import Forecast from "./Forecast"
 
 export default function WeatherData(props) {
   const [weather, setWeather] = useState({ ready: false });
@@ -28,6 +30,16 @@ export default function WeatherData(props) {
 
   if (weather.ready) {
     return (
+      <div>
+        <Row>
+           {/* forecast grid */}
+         <Col>
+           <Forecast />
+         </Col>
+         {/* main icon column */}
+         <Col className="main-icon">
+           <Icons icon="CLEAR_DAY" color="#EBCE00" size="225px" />
+         </Col>
       <Col className="strong-side">
         <h6 className="dateTime">
           <span className="fullDate">Dec 26, 2020</span>
@@ -50,7 +62,9 @@ export default function WeatherData(props) {
             Humidity: {weather.humidity}%
           </span>
         </h6>
-      </Col>
+      </Col>   
+     </Row>
+     </div>
     );
   } else {
     const apiKey = "16fb7fe8628dfdd6476ce112c8b8470c";

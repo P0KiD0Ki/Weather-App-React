@@ -35,10 +35,13 @@ export default function Forecast() {
       satLo: Math.round(response.data.data[6].app_min_temp),
 
       //icon
-      
+
+      //city
+
     });
 
     setReady(true);
+    console.log(response)
   }
 
   if (ready) {
@@ -118,14 +121,7 @@ export default function Forecast() {
     axios.get(forecastUrl).then(displayForecast);
 
     return (
-      <Loader
-      className="loader"
-        type="Hearts"
-        color="#5a454b"
-        height={200}
-        width={200}
-        timeout={3000} //3 sec
-      />
+      " "
     );
   }
 }
