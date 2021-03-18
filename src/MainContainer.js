@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Col } from "react-bootstrap";
 import SearchBar from "./SearchBar";
 import WeatherData from "./WeatherData";
 

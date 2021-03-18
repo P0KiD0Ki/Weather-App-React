@@ -19,10 +19,13 @@ div.primary-container {
 }
 
 div.forecast.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: 0 auto;
   text-align: center;
-  max-width: 375px;
-  padding: 10px 0px 0px 45px;
+  /* max-width: 375px; */
+  padding: 10px 0px 0px 35px;
 }
 
 .day {
@@ -49,7 +52,7 @@ div.main-icon.col {
   margin: 0 auto;
   max-width: 75px;
   background: rgba(231, 182, 195, 0.4);
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 input.textbox {
@@ -95,7 +98,7 @@ h1 {
   text-transform: capitalize;
   color: #5a454b;
   text-shadow: 2px 2px #000;
-  font-family: 'Shrikhand', cursive;
+  font-family: "Shrikhand", cursive;
 }
 
 .dateTime,
@@ -106,7 +109,7 @@ span.wind-humidity {
   text-align: right;
   color: #5a454b;
   text-shadow: 0.5px 0.5px #000;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .currentTemp {
@@ -116,7 +119,7 @@ span.wind-humidity {
   padding: 10px 0px 0px 0px;
   font-weight: normal;
   margin: 0px;
-  font-family: 'Shrikhand', cursive;
+  font-family: "Shrikhand", cursive;
 }
 
 #current-temp {
@@ -197,6 +200,6 @@ a#c-link.active {
 }
 
 .loader {
-margin: 0 auto;
-padding: 0px 80px;
+  margin: 0 auto;
+  padding: 0px 80px;
 }
