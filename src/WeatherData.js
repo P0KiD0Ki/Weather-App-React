@@ -6,7 +6,7 @@ import Loader from "react-loader-spinner";
 import Icons from "./Icons";
 import Forecast from "./Forecast";
 import FormatDate from "./FormatDate";
-import FormatTime from "./FormatTime"
+import FormatTime from "./FormatTime";
 
 export default function WeatherData(props) {
   const [weather, setWeather] = useState({ ready: false });
@@ -58,11 +58,7 @@ export default function WeatherData(props) {
         <Row>
           {/* search bar */}
           <Col xs="auto">
-            <form
-              className="inputBox"
-              id="search-form"
-              onSubmit={handleSubmit}
-            >
+            <form className="inputBox" id="search-form" onSubmit={handleSubmit}>
               <input
                 type="search"
                 placeholder="Search a city..."
@@ -71,11 +67,7 @@ export default function WeatherData(props) {
                 autoFocus
                 onChange={searchCity}
               />
-              <input
-                type="submit"
-                id="button"
-                value="GO"
-              />
+              <input type="submit" id="button" value="GO" />
               <button id="button-loc">
                 <i class="fas fa-crosshairs"></i>
               </button>
@@ -96,8 +88,11 @@ export default function WeatherData(props) {
             <h6 className="dateTime">
               <span className="fullDate">
                 <FormatDate date={weather.date} />
+              </span>{" "}
+              <br />
+              <span className="time">
+                <FormatTime time={weather.time} />
               </span>
-              <span className="time"><FormatTime time={weather.time} /></span>
               <br />
               {/* <span className="time"><FormatTime time={weather.time} /></span> */}
               <h1 className="city">{weather.city}</h1>
