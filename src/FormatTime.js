@@ -4,9 +4,10 @@ export default function FormatTime(props) {
   let hours = props.time.getHours();
   let minutes =
     (props.time.getMinutes() < 10 ? "0" : "") + props.time.getMinutes();
+
   return (
-    <div>
+    <span>
       {hours}:{minutes}
-    </div>
+    </span>
   );
 }

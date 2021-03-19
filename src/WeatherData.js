@@ -5,20 +5,14 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import Icons from "./Icons";
 import Forecast from "./Forecast";
-import FormatDate from "./FormatDate"
+import FormatDate from "./FormatDate";
 import FormatTime from "./FormatTime"
 
 export default function WeatherData(props) {
   const [weather, setWeather] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
 
-  // error function
-
-  function errorFunction() {
-    alert(
-      "😬 I love Narnia, but that's not a real place either. Please try again!"
-    );
-  }
-
+  //display API responses
   function displayTemp(response) {
     setWeather({
       ready: true,
@@ -26,20 +20,72 @@ export default function WeatherData(props) {
       wind: Math.round(response.data.wind.speed),
       humidity: Math.round(response.data.main.humidity),
       description: response.data.weather[0].main,
-      // city: response.data.name,
+      city: response.data.name,
+      icon: response.data.weather[0].icon,
       date: new Date(response.data.dt * 1000),
       time: new Date(),
     });
     // console.log(response.data);
   }
 
+  // search engine
+  function handleSubmit(event) {
+    event.preventDefault();
+    searchEngine();
+  }
+
+  function searchCity(event) {
+    setCity(event.target.value);
+  }
+
+  // error function
+  function errorFunction() {
+    alert(
+      "😬 I love Narnia, but that's not a real place either. Please try again!"
+    );
+  }
+
+  function searchEngine() {
+    const apiKey = "16fb7fe8628dfdd6476ce112c8b8470c";
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+
+    axios.get(apiUrl).then(displayTemp).catch(errorFunction);
+  }
+
   if (weather.ready) {
     return (
       <div>
         <Row>
+          {/* search bar */}
+          <Col xs="auto">
+            <form
+              className="inputBox"
+              id="search-form"
+              onSubmit={handleSubmit}
+            >
+              <input
+                type="search"
+                placeholder="Search a city..."
+                className="textbox"
+                autoComplete="off"
+                autoFocus
+                onChange={searchCity}
+              />
+              <input
+                type="submit"
+                id="button"
+                value="GO"
+              />
+              <button id="button-loc">
+                <i class="fas fa-crosshairs"></i>
+              </button>
+            </form>
+          </Col>
+        </Row>
+        <Row>
           {/* forecast data */}
           <Col>
-            <Forecast />
+            <Forecast city={weather.city} />
           </Col>
           {/* main icon */}
           <Col className="main-icon">
@@ -48,10 +94,13 @@ export default function WeatherData(props) {
           {/* primary weather data */}
           <Col className="strong-side">
             <h6 className="dateTime">
-              <span className="fullDate"><FormatDate date={weather.date}/></span>
-              <br />
+              <span className="fullDate">
+                <FormatDate date={weather.date} />
+              </span>
               <span className="time"><FormatTime time={weather.time} /></span>
-              <h1 className="city">Atlanta</h1>
+              <br />
+              {/* <span className="time"><FormatTime time={weather.time} /></span> */}
+              <h1 className="city">{weather.city}</h1>
               <h6 id="weather">{weather.description}</h6>
               <h2 className="currentTemp">
                 <span id="current-temp">{weather.temperature}</span>
@@ -73,11 +122,7 @@ export default function WeatherData(props) {
       </div>
     );
   } else {
-    const apiKey = "16fb7fe8628dfdd6476ce112c8b8470c";
-    let city = "Atlanta";
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
-
-    axios.get(apiUrl).then(displayTemp).catch(errorFunction);
+    searchEngine();
 
     return (
       <Loader
