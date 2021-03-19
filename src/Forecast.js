@@ -75,7 +75,7 @@ export default function Forecast() {
           </Col>
           {/* tuesday */}
           <Col xs={4} className="day-box">
-            <strong className="day">Tues</strong>
+            <strong className="day">Tue</strong>
             <br />
             {forecast.tueHi}° | {forecast.tueLo}°
             <br />
@@ -94,7 +94,7 @@ export default function Forecast() {
           </Col>
           {/* thursday */}
           <Col xs={4} className="day-box">
-            <strong className="day">Thurs</strong>
+            <strong className="day">Thu</strong>
             <br />
             {forecast.thurHi}° | {forecast.thurLo}°
             <br />
