@@ -63,6 +63,8 @@ input.textbox {
   margin: 15px 0px 0px 20px;
   border: 1px solid black;
   border-radius: 5px;
+  text-transform: capitalize;
+  font-family: "Montserrat", sans-serif;
 }
 
 .dayOfWeek {

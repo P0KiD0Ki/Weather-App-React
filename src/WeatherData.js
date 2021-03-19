@@ -3,10 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import axios from "axios";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
-import Icons from "./Icons";
-import Forecast from "./Forecast";
-import FormatDate from "./FormatDate";
-import FormatTime from "./FormatTime";
+import WeatherDisplay from "./WeatherDisplay";
 
 export default function WeatherData(props) {
   const [weather, setWeather] = useState({ ready: false });
@@ -74,46 +71,7 @@ export default function WeatherData(props) {
             </form>
           </Col>
         </Row>
-        <Row>
-          {/* forecast data */}
-          <Col>
-            <Forecast city={weather.city} />
-          </Col>
-          {/* main icon */}
-          <Col className="main-icon">
-            <Icons icon="CLEAR_DAY" color="#EBCE00" size="225px" />
-          </Col>
-          {/* primary weather data */}
-          <Col className="strong-side">
-            <h6 className="dateTime">
-              <span className="fullDate">
-                <FormatDate date={weather.date} />
-              </span>{" "}
-              <br />
-              <span className="time">
-                <FormatTime time={weather.time} />
-              </span>
-              <br />
-              {/* <span className="time"><FormatTime time={weather.time} /></span> */}
-              <h1 className="city">{weather.city}</h1>
-              <h6 id="weather">{weather.description}</h6>
-              <h2 className="currentTemp">
-                <span id="current-temp">{weather.temperature}</span>
-                <span href="#" id="f-link" className="active">
-                  °F
-                </span>
-                <span className="line">|</span>
-                <span href="#" id="c-link">
-                  °C
-                </span>
-              </h2>
-              <span className="wind-humidity">
-                Wind: {weather.wind} mph <br />
-                Humidity: {weather.humidity}%
-              </span>
-            </h6>
-          </Col>
-        </Row>
+        <WeatherDisplay weather={weather}/>
       </div>
     );
   } else {
