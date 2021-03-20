@@ -177,20 +177,6 @@ h1.city {
   font-weight: bold;
 }
 
-a#f-link.active {
-  color: black;
-  cursor: default;
-}
-
-a#c-link.active {
-  color: black;
-  cursor: default;
-}
-
-#f-link .active:hover {
-  text-decoration: none;
-}
-
 #sun-icon,
 #mon-icon,
 #tues-icon,

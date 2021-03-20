@@ -10,7 +10,7 @@ export default function Forecast(props) {
 
   //display forecast responses
   function displayForecast(response) {
-   console.log(response)
+  //  console.log(response)
 
     //sunday
     setForecast({

@@ -4,6 +4,7 @@ import Forecast from "./Forecast";
 import FormatDate from "./FormatDate";
 import FormatTime from "./FormatTime";
 import { Col, Row } from "react-bootstrap";
+import TempUnit from "./TempUnit"
 
 export default function WeatherDisplay(props) {
   return (
@@ -29,16 +30,7 @@ export default function WeatherDisplay(props) {
           <br />
           <h1 className="city">{props.weather.city}</h1>
           <h6 id="weather">{props.weather.description}</h6>
-          <h2 className="currentTemp">
-            <span id="current-temp">{props.weather.temperature}</span>
-            <span href="#" id="f-link" className="active">
-              °F
-            </span>
-            <span className="line">|</span>
-            <span href="#" id="c-link">
-              °C
-            </span>
-          </h2>
+            <TempUnit fahrenheit={props.weather.temperature} />
           <span className="wind-humidity">
             Wind: {props.weather.wind} mph <br />
             Humidity: {props.weather.humidity}%
