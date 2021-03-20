@@ -17,9 +17,7 @@ export default function TempUnit(props) {
     return (
       <h2 className="currentTemp">
         <span id="current-temp">{props.fahrenheit}</span>
-        <span id="f-link" className="active">
-          °F
-        </span>
+        <span id="f-link">°F</span>
         <span className="line">|</span>
         <span id="c-link">
           <a href="/" onClick={celsConvert}>
@@ -34,7 +32,7 @@ export default function TempUnit(props) {
         <span id="current-temp">
           {Math.round(((props.fahrenheit - 32) * 5) / 9)}
         </span>
-        <span id="f-link" className="active">
+        <span id="f-link">
           <a href="/" onclick={fahrConvert}>
             °F
           </a>
