@@ -9,7 +9,7 @@ export default function TempUnit(props) {
   }
 
   function fahrConvert(event) {
-    event.stopPropagation();
+    event.preventDefault();
     setUnit("imperial");
   }
 
