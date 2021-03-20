@@ -4,14 +4,18 @@ import { Container, Row, Col } from "react-bootstrap";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 
-export default function Forecast() {
-  const [ready, setReady] = useState(false);
+export default function Forecast(props) {
+  const [forecast, setForecast] = useState({ ready: false });
+  // const [city, setCity] = useState(props.defaultCity);
 
-  const [forecast, setForecast] = useState({});
-
+  //display forecast responses
   function displayForecast(response) {
+   console.log(response)
+
     //sunday
     setForecast({
+      ready: true,
+
       //sunday
       sunHi: Math.round(response.data.data[0].app_max_temp),
       sunLo: Math.round(response.data.data[0].app_min_temp),
@@ -49,11 +53,19 @@ export default function Forecast() {
 
       // city: response.data.city_name,
     });
-
-    setReady(true);
   }
 
-  if (ready) {
+  // setCity(props.weather.city);
+
+  function loadForecast() {
+    const forecastKey = "13ce2da2cd2d4da6b6a30677bd0ecc0d";
+    let city ="Atlanta"
+    const forecastUrl = `https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=${forecastKey}&units=I`;
+
+    axios.get(forecastUrl).then(displayForecast);
+  }
+
+  if (forecast.ready) {
     return (
       <Container className="forecast">
         <Row>
@@ -123,11 +135,7 @@ export default function Forecast() {
       </Container>
     );
   } else {
-    const forecastKey = "13ce2da2cd2d4da6b6a30677bd0ecc0d";
-    let city = "Atlanta";
-    const forecastUrl = `https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=${forecastKey}&units=I`;
-
-    axios.get(forecastUrl).then(displayForecast);
+    loadForecast();
 
     return (
       <Loader

@@ -1,5 +1,5 @@
 import React from "react";
-import Icons from "./Icons";
+import MainIcon from "./MainIcon";
 import Forecast from "./Forecast";
 import FormatDate from "./FormatDate";
 import FormatTime from "./FormatTime";
@@ -10,11 +10,11 @@ export default function WeatherDisplay(props) {
     <Row>
       {/* forecast data */}
       <Col>
-        <Forecast city={props.weather.city} />
+        <Forecast weather={props.weather.city} />
       </Col>
       {/* main icon */}
       <Col className="main-icon">
-        <Icons icon="CLEAR_DAY" color="#EBCE00" size="225px" />
+        <MainIcon code={props.weather.icon} />
       </Col>
       {/* primary weather data */}
       <Col className="strong-side">
