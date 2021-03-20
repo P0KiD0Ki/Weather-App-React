@@ -33,7 +33,7 @@ export default function TempUnit(props) {
           {Math.round(((props.fahrenheit - 32) * 5) / 9)}
         </span>
         <span id="f-link">
-          <a href="/" onclick={fahrConvert}>
+          <a href="/" onClick={fahrConvert}>
             °F
           </a>
         </span>
