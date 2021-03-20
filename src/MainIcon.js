@@ -21,17 +21,35 @@ export default function MainIcon(props) {
     "13n": "SNOW",
     "50d": "FOG",
     "50n": "FOG",
-  }
+  };
+
+  const colorMapping = {
+    "01d": "#EBCE00",
+    "01n": "#385B69",
+    "02d": "#A5AFC4",
+    "02n": "#656B78",
+    "03d": "#7A8191",
+    "03n": "#3A3E45",
+    "04d": "#7A8291",
+    "04n": "#4F555E",
+    "09d": "#17D2EB",
+    "09n": "#2B646B",
+    "10d": "#12A4B8",
+    "10n": "#163438",
+    "11d": "#466063",
+    "11n": "#1E454A",
+    "13d": "#DEDEDE",
+    "13n": "#898B91",
+    "50d": "#999999",
+    "50n": "#4D4D4D",
+  };
 
   return (
-
     <ReactAnimatedWeather
       icon={codeMapping[props.code]}
-      color="#EBCE00"
+      color={colorMapping[props.code]}
       size="225px"
       animate={props.animate}
-
-
     />
   );
 }
