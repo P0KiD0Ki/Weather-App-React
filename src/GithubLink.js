@@ -5,7 +5,7 @@ export default function GithubLink() {
     <div className="GithubLink">
       <div title="Link to GitHub Repository">
         <a
-          href="https://github.com/P0KiD0Ki/Weather-App"
+          href="https://github.com/P0KiD0Ki/Weather-App-React"
           target="_blank"
           rel="noreferrer"
           className="foot"
