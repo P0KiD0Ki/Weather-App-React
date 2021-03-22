@@ -20,10 +20,9 @@ export default function WeatherData(props) {
       description: response.data.data[0].weather.description,
       city: response.data.data[0].city_name,
       icon: response.data.data[0].weather.icon,
-      date: new Date(response.data.data[0].datetime),
+      date: new Date(response.data.data[0].ts * 1000),
       time: new Date(),
     });
-    console.log(response.data.data[0]);
   }
 
   // search engine
@@ -36,22 +35,34 @@ export default function WeatherData(props) {
     setCity(event.target.value);
   }
 
+  function showPositon(position) {
+    let apiKey = "13ce2da2cd2d4da6b6a30677bd0ecc0d";
+    let apiUrl = `https://api.weatherbit.io/v2.0/current?lat=${position.coords.latitude}&lon=${position.coords.longitude}&key=${apiKey}&units=I`;
+  
+    axios.get(apiUrl).then(displayTemp);
+  }
+  
+  function getLocation(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(showPositon);
+  }
+
   // error function
-  // function errorFunction() {
-  //   alert(
-  //     "😬 I love Narnia, but that's not a real place either. Please try again!"
-  //   );
-  // }
+  function errorFunction() {
+    alert(
+      "😬 I love Narnia, but that's not a real place either. Please try again!"
+    );
+  }
 
   function searchEngine() {
     const apiKey = "13ce2da2cd2d4da6b6a30677bd0ecc0d";
     const apiUrl = `https://api.weatherbit.io/v2.0/current?city=${city}&key=${apiKey}&units=I`;
     
 
-    axios.get(apiUrl).then(displayTemp);
+    axios.get(apiUrl).then(displayTemp).catch(errorFunction);
   }
 
-  // .catch(errorFunction)
+
 
   if (weather.ready) {
     return (
@@ -69,7 +80,7 @@ export default function WeatherData(props) {
                 onChange={searchCity}
               />
               <input type="submit" id="button" value="GO" />
-              <button id="button-loc">
+              <button id="button-loc" onClick={getLocation}>
                 <i class="fas fa-crosshairs"></i>
               </button>
             </form>

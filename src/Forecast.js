@@ -3,10 +3,12 @@ import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
+import ForecastIcons from "./ForecastIcons";
 
 export default function Forecast(props) {
   const [forecast, setForecast] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+  // const [icon, setIcon] = useState(props.icon);
 
   //display forecast responses
   function displayForecast(response) {
@@ -17,42 +19,34 @@ export default function Forecast(props) {
       //sunday
       sunHi: Math.round(response.data.data[0].app_max_temp),
       sunLo: Math.round(response.data.data[0].app_min_temp),
-      // sunIcon: `https://www.weatherbit.io/static/img/icons/${response.data.data[0].weather.icon}.png`,
-
+      sunIcon: response.data.data[0].weather.icon,
       //monday
       monHi: Math.round(response.data.data[1].app_max_temp),
       monLo: Math.round(response.data.data[1].app_min_temp),
-      // monIcon: `https://www.weatherbit.io/static/img/icons/${response.data.data[1].weather.icon}.png`,
-
+      monIcon: response.data.data[1].weather.icon,
       //tuesday
       tueHi: Math.round(response.data.data[2].app_max_temp),
       tueLo: Math.round(response.data.data[2].app_min_temp),
-      // tueIcon: `https://www.weatherbit.io/static/img/icons/${response.data.data[2].weather.icon}.png`,
-
+      tueIcon: response.data.data[2].weather.icon,
       //wednesday
       wedHi: Math.round(response.data.data[3].app_max_temp),
       wedLo: Math.round(response.data.data[3].app_min_temp),
-      // wedIcon: `https://www.weatherbit.io/static/img/icons/${response.data.data[3].weather.icon}.png`,
-
+      wedIcon: response.data.data[3].weather.icon,
       //thursday
       thurHi: Math.round(response.data.data[4].app_max_temp),
       thurLo: Math.round(response.data.data[4].app_min_temp),
-      // thurIcon: `https://www.weatherbit.io/static/img/icons/${response.data.data[4].weather.icon}.png`,
-
+      thurIcon: response.data.data[4].weather.icon,
       //friday
       friHi: Math.round(response.data.data[5].app_max_temp),
       friLo: Math.round(response.data.data[5].app_min_temp),
-      // friIcon: `https://www.weatherbit.io/static/img/icons/${response.data.data[5].weather.icon}.png`,
-
+      friIcon: response.data.data[5].weather.icon,
       //saturday
       satHi: Math.round(response.data.data[6].app_max_temp),
       satLo: Math.round(response.data.data[6].app_min_temp),
-      // satIcon: `https://www.weatherbit.io/static/img/icons/${response.data.data[6].weather.icon}.png`,
-
-      // city: response.data.city_name,
+      satIcon: response.data.data[6].weather.icon,
+    
     });
     setCity(props.city);
-    // console.log(response.data)
   }
 
   function loadForecast() {
@@ -60,9 +54,14 @@ export default function Forecast(props) {
     const forecastUrl = `https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=${forecastKey}&units=I`;
 
     axios.get(forecastUrl).then(displayForecast);
+
+    // let forecastGeoKey = "13ce2da2cd2d4da6b6a30677bd0ecc0d";
+    // let forecastGeoUrl = `https://api.weatherbit.io/v2.0/forecast/daily?lat=${props.lat}&lon=${props.lon}&key=${forecastGeoKey}&units=I`;
+
+    // axios.get(forecastGeoUrl).then(displayForecast);
   }
 
-  if (forecast.ready) {
+  if (forecast.ready && city === props.city) {
     return (
       <Container className="forecast">
         <Row>
@@ -72,7 +71,7 @@ export default function Forecast(props) {
             <br />
             {forecast.sunHi}° | {forecast.sunLo}°
             <br />
-            {forecast.sunIcon}
+            <ForecastIcons code={forecast.sunIcon}/>
           </Col>
           {/* monday */}
           <Col xs={4} className="day-box">
@@ -80,7 +79,7 @@ export default function Forecast(props) {
             <br />
             {forecast.monHi}° | {forecast.monLo}°
             <br />
-            {forecast.monIcon}
+            <ForecastIcons code={forecast.monIcon}/>
           </Col>
           {/* tuesday */}
           <Col xs={4} className="day-box">
@@ -88,7 +87,7 @@ export default function Forecast(props) {
             <br />
             {forecast.tueHi}° | {forecast.tueLo}°
             <br />
-            {forecast.tueIcon}
+            <ForecastIcons code={forecast.tueIcon}/>
           </Col>
         </Row>
         <br />
@@ -99,7 +98,7 @@ export default function Forecast(props) {
             <br />
             {forecast.wedHi}° | {forecast.wedLo}°
             <br />
-            {forecast.wedIcon}
+            <ForecastIcons code={forecast.wedIcon}/>
           </Col>
           {/* thursday */}
           <Col xs={4} className="day-box">
@@ -107,7 +106,7 @@ export default function Forecast(props) {
             <br />
             {forecast.thurHi}° | {forecast.thurLo}°
             <br />
-            {forecast.thurIcon}
+            <ForecastIcons code={forecast.thurIcon}/>
           </Col>
           {/* friday */}
           <Col xs={4} className="day-box">
@@ -115,7 +114,7 @@ export default function Forecast(props) {
             <br />
             {forecast.friHi}° | {forecast.friLo}°
             <br />
-            {forecast.friIcon}
+            <ForecastIcons code={forecast.friIcon}/>
           </Col>
         </Row>
         <br />
@@ -126,7 +125,7 @@ export default function Forecast(props) {
             <br />
             {forecast.satHi}° | {forecast.satLo}°
             <br />
-            {forecast.satIcon}
+            <ForecastIcons code={forecast.satIcon}/>
           </Col>
         </Row>
       </Container>

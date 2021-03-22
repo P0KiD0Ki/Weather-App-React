@@ -24,7 +24,7 @@ div.forecast.container {
   justify-content: center;
   margin: 0 auto;
   text-align: center;
-  padding: 10px 0px 10px 35px;
+  padding: 10px 0px 10px 25px;
 }
 
 .day {
@@ -34,6 +34,7 @@ div.forecast.container {
 
 div.col {
   padding: 0px;
+  margin: 5px;
 }
 
 div.day-box-row.row {
@@ -82,12 +83,16 @@ input.textbox {
 }
 
 canvas {
-  padding: 20px 0px 0px 0px;
+  padding: 0px;
+}
+
+div.forecastIcons{
+  padding: 0px;
 }
 
 .main-icon {
-  max-width: 130px;
-  margin: 0 auto;
+  max-width: 90px;
+  margin: 0px;
 }
 
 h1 {
@@ -106,11 +111,12 @@ h1 {
 span.wind-humidity {
   font-size: 20px;
   margin: 0 auto;
-  padding: 10px 15px 10px 0px;
+  padding: 10px 25px 10px 0px;
   text-align: right;
   color: #5a454b;
   text-shadow: 0.5px 0.5px #000;
   font-family: "Montserrat", sans-serif;
+  min-width: 250px;
 }
 
 .currentTemp {
@@ -166,6 +172,7 @@ h1.city {
   height: 35px;
   border: 1px solid black;
   border-radius: 5px;
+  display: none
 }
 
 #button {
@@ -176,15 +183,6 @@ h1.city {
   font-weight: bold;
 }
 
-#sun-icon,
-#mon-icon,
-#tues-icon,
-#wed-icon,
-#thurs-icon,
-#fri-icon,
-#sat-icon {
-  width: 40px;
-}
 
 .loader {
   margin: 0 auto;
