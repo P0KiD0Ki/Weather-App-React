@@ -1,3 +1,7 @@
+The MVP of my ReactJS weather app. 
+
+I still would like to add/edit a few things that are currently outside the range of my knowledge, but this is the first iteration of this app and it can be found <a href="https://boring-payne-7ad899.netlify.app/">here</a>.
+<hr />
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
