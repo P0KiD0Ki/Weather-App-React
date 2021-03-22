@@ -24,7 +24,7 @@ div.forecast.container {
   justify-content: center;
   margin: 0 auto;
   text-align: center;
-  padding: 10px 0px 0px 35px;
+  padding: 10px 0px 10px 35px;
 }
 
 .day {
@@ -47,13 +47,12 @@ div.main-icon.col {
 .day-box {
   border: 1px dashed black;
   border-radius: 10px;
-  padding: 5px;
-  margin: 0 auto;
-  max-width: 99px;
+  padding: 3px;
+  margin: 5px auto 5px ;
+  max-width: 85px;
   background: rgba(231, 182, 195, 0.4);
   font-family: "Montserrat", sans-serif;
 }
-
 
 input.textbox {
   width: 250px;
@@ -83,11 +82,11 @@ input.textbox {
 }
 
 canvas {
-  padding: 20px 0px 0px 20px;
+  padding: 20px 0px 0px 0px;
 }
 
 .main-icon {
-  max-width: 20px;
+  max-width: 130px;
   margin: 0 auto;
 }
 
@@ -107,7 +106,7 @@ h1 {
 span.wind-humidity {
   font-size: 20px;
   margin: 0 auto;
-  padding: 10px 5px 10px 0px;
+  padding: 10px 15px 10px 0px;
   text-align: right;
   color: #5a454b;
   text-shadow: 0.5px 0.5px #000;
@@ -190,4 +189,8 @@ h1.city {
 .loader {
   margin: 0 auto;
   padding: 0px 80px;
+}
+
+a:hover {
+  text-decoration: none;
 }

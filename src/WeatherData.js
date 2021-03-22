@@ -4,6 +4,7 @@ import axios from "axios";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import WeatherDisplay from "./WeatherDisplay";
+import Forecast from "./Forecast";
 
 export default function WeatherData(props) {
   const [weather, setWeather] = useState({ ready: false });
@@ -13,16 +14,16 @@ export default function WeatherData(props) {
   function displayTemp(response) {
     setWeather({
       ready: true,
-      temperature: Math.round(response.data.main.temp),
-      wind: Math.round(response.data.wind.speed),
-      humidity: Math.round(response.data.main.humidity),
-      description: response.data.weather[0].main,
-      city: response.data.name,
-      icon: response.data.weather[0].icon,
-      date: new Date(response.data.dt * 1000),
+      temperature: Math.round(response.data.data[0].temp),
+      wind: Math.round(response.data.data[0].wind_spd),
+      humidity: Math.round(response.data.data[0].rh),
+      description: response.data.data[0].weather.description,
+      city: response.data.data[0].city_name,
+      icon: response.data.data[0].weather.icon,
+      date: new Date(response.data.data[0].datetime),
       time: new Date(),
     });
-    // console.log(response.data);
+    console.log(response.data.data[0]);
   }
 
   // search engine
@@ -36,18 +37,21 @@ export default function WeatherData(props) {
   }
 
   // error function
-  function errorFunction() {
-    alert(
-      "😬 I love Narnia, but that's not a real place either. Please try again!"
-    );
-  }
+  // function errorFunction() {
+  //   alert(
+  //     "😬 I love Narnia, but that's not a real place either. Please try again!"
+  //   );
+  // }
 
   function searchEngine() {
-    const apiKey = "16fb7fe8628dfdd6476ce112c8b8470c";
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+    const apiKey = "13ce2da2cd2d4da6b6a30677bd0ecc0d";
+    const apiUrl = `https://api.weatherbit.io/v2.0/current?city=${city}&key=${apiKey}&units=I`;
+    
 
-    axios.get(apiUrl).then(displayTemp).catch(errorFunction);
+    axios.get(apiUrl).then(displayTemp);
   }
+
+  // .catch(errorFunction)
 
   if (weather.ready) {
     return (
@@ -71,7 +75,13 @@ export default function WeatherData(props) {
             </form>
           </Col>
         </Row>
+        <Row>
+        {/* forecast data */}
+      <Col>
+        <Forecast city={weather.city} defaultCity="Atlanta" />
+      </Col>
         <WeatherDisplay weather={weather}/>
+        </Row>
       </div>
     );
   } else {
