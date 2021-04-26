@@ -4,6 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import ForecastIcons from "./ForecastIcons";
+import "./Forecast.css"
 
 export default function Forecast(props) {
   const [forecast, setForecast] = useState({ ready: false });
@@ -120,7 +121,7 @@ export default function Forecast(props) {
         <br />
         <Row>
           {/* saturday */}
-          <Col xs={4} className="day-box">
+          <Col xs={4} className="day-box saturday">
             <strong className="day">Sat</strong>
             <br />
             {forecast.satHi}° | {forecast.satLo}°

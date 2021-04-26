@@ -1,0 +1,36 @@
+div.forecast.container {
+    text-align: center;
+    padding: 0px;
+    margin: 20px 0px 10px 90px;
+  }
+
+  .day-box {
+    border: 1px dashed black;
+    border-radius: 10px;
+    padding: 3px;
+    max-width: 85px;
+    background: rgba(231, 182, 195, 0.4);
+    font-family: "Montserrat", sans-serif;
+  }
+
+  div.day-box.col-4 {
+    margin: 0 5px;
+  }
+
+  .day-box.saturday.col-4 {
+    position: relative;
+    left: 95px;
+  }
+
+  div.row {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 730px) {
+    div.forecast.container {
+      text-align: center;
+      padding: 0px;
+      margin: 20px 0px 20px 10px;
+    }
+  }

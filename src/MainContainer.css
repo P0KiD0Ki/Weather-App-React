@@ -1,0 +1,44 @@
+
+div.primary-container {
+    border: 4px dashed #5a454b;
+    border-radius: 10px;
+    max-width: 725px;
+    margin: 70px auto 0px;
+    background: rgba(255, 255, 255, 0.8);
+    font-family: "Open Sans Condensed", sans-serif;
+    padding: 0px 20px 0px 0px;
+  }
+  
+  .day {
+    text-decoration: underline;
+    color: #5a454b;
+  }
+  
+  div.main-icon.col {
+    padding: 100px 0px 0px 0px;
+    width: 50px;
+    position: relative;
+    right: 30px;
+  }
+  
+  div.primary-container.container-fluid{
+    padding: 0;
+  }
+
+  @media (max-width: 730px) {
+    div.primary-container {
+      border: 4px dashed #5a454b;
+      border-radius: 10px;
+      max-width: 375px;
+      margin: 70px auto 0px;
+      background: rgba(255, 255, 255, 0.8);
+      font-family: "Open Sans Condensed", sans-serif;
+      padding: 0px 20px 0px 0px;
+    }
+
+    div.main-icon.col {
+      padding: 150px 0px 0px 0px;
+      position: relative;
+    right: 100px;
+    }
+  }

@@ -8,53 +8,6 @@ body {
   margin: 0 auto;
 }
 
-div.primary-container {
-  border: 4px dashed #5a454b;
-  border-radius: 10px;
-  max-width: 725px;
-  margin: 70px auto 0px;
-  background: rgba(255, 255, 255, 0.8);
-  font-family: "Open Sans Condensed", sans-serif;
-  padding: 0px 20px 0px 0px;
-}
-
-div.forecast.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 auto;
-  text-align: center;
-  padding: 10px 0px 10px 25px;
-}
-
-.day {
-  text-decoration: underline;
-  color: #5a454b;
-}
-
-div.col {
-  padding: 0px;
-  margin: 5px;
-}
-
-div.day-box-row.row {
-  max-width: 300px;
-}
-
-div.main-icon.col {
-  padding: 0px;
-}
-
-.day-box {
-  border: 1px dashed black;
-  border-radius: 10px;
-  padding: 3px;
-  margin: 5px auto 5px ;
-  max-width: 85px;
-  background: rgba(231, 182, 195, 0.4);
-  font-family: "Montserrat", sans-serif;
-}
-
 input.textbox {
   width: 250px;
   font-size: 17px;
@@ -86,12 +39,8 @@ canvas {
   padding: 0px;
 }
 
-div.forecastIcons{
-  padding: 0px;
-}
-
 .main-icon {
-  max-width: 90px;
+  max-width: 80px;
   margin: 0px;
 }
 
@@ -107,21 +56,23 @@ h1 {
   font-family: "Shrikhand", cursive;
 }
 
-.dateTime,
-span.wind-humidity {
+h6.dateTime {
   font-size: 20px;
-  margin: 0 auto;
-  padding: 10px 25px 10px 0px;
-  text-align: right;
+  margin: 20px 0px 0px 0px;
+  text-align: left;
   color: #5a454b;
   text-shadow: 0.5px 0.5px #000;
   font-family: "Montserrat", sans-serif;
-  min-width: 250px;
+}
+
+div.strong-side.col {
+  max-width: 250px;
+  padding: 0px;
 }
 
 .currentTemp {
   font-size: 85px;
-  text-align: right;
+  text-align: left;
   line-height: 60px;
   padding: 10px 0px 0px 0px;
   font-weight: normal;
@@ -136,7 +87,7 @@ span.wind-humidity {
 
 h1.city {
   padding: 10px 0px 2px 0px;
-  text-align: right;
+  text-align: left;
   color: #5a454b;
   text-shadow: 1px 1px #000;
 }
@@ -153,8 +104,9 @@ h1.city {
 
 #weather {
   text-align: right;
-  padding: 8px 0px 0px 0px;
+  padding: 8px 0px 5px 0px;
   margin: 0px;
+  max-width: 200px;
 }
 
 .foot {
@@ -172,7 +124,7 @@ h1.city {
   height: 35px;
   border: 1px solid black;
   border-radius: 5px;
-  display: none
+  display: none;
 }
 
 #button {
@@ -183,7 +135,6 @@ h1.city {
   font-weight: bold;
 }
 
-
 .loader {
   margin: 0 auto;
   padding: 0px 80px;
@@ -191,4 +142,68 @@ h1.city {
 
 a:hover {
   text-decoration: none;
+}
+
+@media (max-width: 730px) {
+  input.textbox {
+    width: 220px;
+    font-size: 17px;
+    height: 35px;
+    padding: 5px 10px;
+    margin: 15px 0px 0px 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  h6.dateTime {
+    font-size: 20px;
+    margin: 20px 0px 0px 20px;
+    padding: 0px 0px 0px 0px;
+    text-align: left;
+    color: #5a454b;
+    text-shadow: 0.5px 0.5px #000;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  h1 {
+    font-size: 35px;
+    line-height: 45px;
+    margin: 0 auto;
+    font-weight: normal;
+    padding: 0px, 5px;
+    text-transform: capitalize;
+    color: #5a454b;
+    text-shadow: 2px 2px #000;
+    font-family: "Shrikhand", cursive;
+  }
+
+  .currentTemp {
+    font-size: 65px;
+  }
+
+  #f-link,
+  #c-link,
+  .line {
+    text-align: right;
+    font-size: 17px;
+    position: relative;
+    top: -50px;
+    text-decoration: none;
+  }
+
+  .main-icon {
+    max-width: 100px;
+    margin: 0px 10px;
+  }
+
+  #weather {
+    text-align: right;
+    padding: 3px 0px 5px 0px;
+    margin: 0px;
+  }
+  canvas {
+    
+  }
 }

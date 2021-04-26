@@ -5,6 +5,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import WeatherDisplay from "./WeatherDisplay";
 import Forecast from "./Forecast";
+import MainIcon from "./MainIcon"
 
 export default function WeatherData(props) {
   const [weather, setWeather] = useState({ ready: false });
@@ -87,11 +88,15 @@ export default function WeatherData(props) {
           </Col>
         </Row>
         <Row>
-        {/* forecast data */}
+        <WeatherDisplay weather={weather}/>
+        {/* main icon */}
+        <Col className="main-icon">
+          <MainIcon code={weather.icon} />
+        </Col>
+          {/* forecast data */}
       <Col>
         <Forecast city={weather.city} defaultCity="Atlanta" />
       </Col>
-        <WeatherDisplay weather={weather}/>
         </Row>
       </div>
     );

@@ -1,6 +1,5 @@
 import React from "react";
-import MainIcon from "./MainIcon";
-// import Forecast from "./Forecast";
+// import MainIcon from "./MainIcon";
 import FormatDate from "./FormatDate";
 import FormatTime from "./FormatTime";
 import { Col, Row } from "react-bootstrap";
@@ -9,12 +8,6 @@ import TempUnit from "./TempUnit";
 export default function WeatherDisplay(props) {
   return (
     <Row>
-      {/* main icon */}
-      <Col>
-        <Col className="main-icon">
-          <MainIcon code={props.weather.icon} />
-        </Col>
-      </Col>
       {/* primary weather data */}
       <Col className="strong-side">
         <h6 className="dateTime">
