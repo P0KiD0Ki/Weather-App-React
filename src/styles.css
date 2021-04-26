@@ -151,32 +151,20 @@ a:hover {
     height: 35px;
     padding: 5px 10px;
     margin: 15px 0px 0px 20px;
-    border: 1px solid black;
-    border-radius: 5px;
-    text-transform: capitalize;
-    font-family: "Montserrat", sans-serif;
   }
 
   h6.dateTime {
     font-size: 20px;
-    margin: 20px 0px 0px 20px;
-    padding: 0px 0px 0px 0px;
+    margin: 20px 0px 0px 30px;
     text-align: left;
     color: #5a454b;
-    text-shadow: 0.5px 0.5px #000;
-    font-family: "Montserrat", sans-serif;
   }
 
   h1 {
     font-size: 35px;
     line-height: 45px;
     margin: 0 auto;
-    font-weight: normal;
     padding: 0px, 5px;
-    text-transform: capitalize;
-    color: #5a454b;
-    text-shadow: 2px 2px #000;
-    font-family: "Shrikhand", cursive;
   }
 
   .currentTemp {
@@ -186,7 +174,7 @@ a:hover {
   #f-link,
   #c-link,
   .line {
-    text-align: right;
+    text-align: center;
     font-size: 17px;
     position: relative;
     top: -50px;
@@ -202,8 +190,5 @@ a:hover {
     text-align: right;
     padding: 3px 0px 5px 0px;
     margin: 0px;
-  }
-  canvas {
-    
   }
 }
