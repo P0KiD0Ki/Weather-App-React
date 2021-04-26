@@ -45,7 +45,7 @@ canvas {
 }
 
 h1 {
-  font-size: 55px;
+  font-size: 45px;
   line-height: 60px;
   margin: 0 auto;
   font-weight: normal;
@@ -58,7 +58,7 @@ h1 {
 
 h6.dateTime {
   font-size: 20px;
-  margin: 20px 0px 0px 0px;
+  margin: 20px 0px 0px 20px;
   text-align: left;
   color: #5a454b;
   text-shadow: 0.5px 0.5px #000;
@@ -71,7 +71,7 @@ div.strong-side.col {
 }
 
 .currentTemp {
-  font-size: 85px;
+  font-size: 75px;
   text-align: left;
   line-height: 60px;
   padding: 10px 0px 0px 0px;
